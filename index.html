@@ -1,39 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/styles.css">
   <title>Frontend Mentor | Intro section with dropdown navigation</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap" rel="stylesheet">
   <style>
-    .attribution { font-size: 0.6875rem; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+
   </style>
 </head>
+
 <body>
+  <header class="header">
+    <section class="top-mobile">
+      <img src="./images/logo.svg" alt="Logo, snap" class="logo">
+      <h1 class="sr-only">snap</h1>
+      <button class="menu-button"><img class="menu-icon" src="./images/icon-menu.svg" alt="menu icon"></button>
+    </section>
 
-  Features
-  Company
-  Careers
-  About
+    <nav class="navigation">
+      <section class="nav-section">
+        <button>
+          <span class="link">Features</span>
+          <img src="./images/icon-arrow-down.svg" alt="arrow up" class="icon-open">
+          <img src="./images/icon-arrow-up.svg" alt="arrow down" class="icon-close">
+        </button>
+        <div class="menu">
+          <a href="#"><img src="./images/icon-todo.svg" alt="todo list icon"><span class="link">Todo List</span></a>
+          <a href="#"><img src="./images/icon-calendar.svg" alt=calendar icon""><span class="link">Calendar</span></a>
+          <a href="#"><img src="./images/icon-reminders.svg" alt="reminder bell icon"><span
+              class="link">Reminders</span></a>
+          <a href="#"><img src="./images/icon-planning.svg" alt="planning clock icon"><span
+              class="link">Planning</span></a>
+        </div>
+      </section>
+      <section class="nav-section">
+        <button>
+          <span class="link">Company</span>
+          <img src="./images/icon-arrow-down.svg" alt="arrow up" class="icon-open">
+          <img src="./images/icon-up-down.svg" alt="arrow down" class="icon-close">
+        </button>
+        <div class="menu">
+          <a href="#" class="link">History</a>
+          <a href="#" class="link">Our Team</a>
+          <a href="#" class="link">Blog</a>
+        </div>
+      </section>
+      <a href="#" class="link">Careers</a>
+      <a href="#" class="link">About</a>
+      <div class="buttons">
+        <a href="#" class="link">Login</a>
+        <a href="#" class="link button">Register</a>
+      </div>
+    </nav>
+  </header>
+  <main class="main">
+    <section class="hero-image">
+      <img class="hero-mobile" src="./images/image-hero-mobile.png"
+        alt="hero mobile, a man with laptop on his hands, illustrations around him">
+      <img class="hero-desktop" src="./images/image-hero-desktop.png"
+        alt="hero desktop, a man with laptop on his hands, illustrations around him">
+    </section>
+    <section class="hero-text">
+      <h2 class="hero-title">Make remote work</h2>
+      <p class="hero-description">Get your team in sync, no matter your location. Streamline processes,
+        create team rituals, and watch productivity soar.</p>
 
-  Login
-  Register
+      <button class="cta-btn">Learn more</button>
 
-  Make remote work
+      <div class="clients-icons">
+        <img src="./images/client-databiz.svg" alt="" class="icon">
+        <img src="./images/client-audiophile.svg" alt="" class="icon">
+        <img src="./images/client-meet.svg" alt="" class="icon">
+        <img src="./images/client-maker.svg" alt="" class="icon">
+      </div>
+    </section>
+  </main>
 
-  Get your team in sync, no matter your location. Streamline processes, 
-  create team rituals, and watch productivity soar.
-
-  Learn more
-  
-  <footer class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+  <footer class="footer">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
     Coded by <a href="#">Your Name Here</a>.
   </footer>
 </body>
+
 </html>
