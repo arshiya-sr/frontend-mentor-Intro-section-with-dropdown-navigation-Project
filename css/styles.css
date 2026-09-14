@@ -32,13 +32,118 @@
 
 .menu-icon {
     width: 40px;
+    position: relative;
+    z-index: 30;
 }
 
-.navigation,
 .menu,
 .hero-desktop,
 .arrow-up {
     display: none;
+}
+
+/* hamburger menu */
+
+.navigation {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100dvh;
+    width: min(70%, 320px);
+    padding: var(--space-xl) var(--space-lg);
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+
+    background-color: var(--White);
+    overflow-y: auto;
+    z-index: 20;
+
+    transform: translateX(100%);
+    visibility: hidden;
+    transition: transform 0.3s ease, visibility 0.3s ease;
+}
+
+.navigation.is-open {
+    transform: translateX(0);
+    visibility: visible;
+}
+
+/* ===== لایه تاریک ===== */
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    /* top/right/bottom/left = 0 */
+    background-color: hsl(0 0% 0% / 0.8);
+    z-index: 10;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.overlay.is-open {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* جلوگیری از اسکرول پشت منو */
+body.no-scroll {
+    overflow: hidden;
+}
+
+/* small menus */
+
+/* ===== دراپداون (موبایل) ===== */
+
+.nav-section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+/* دکمهی حاوی متن + فلش */
+.nav-section>button {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+}
+
+/* فلش رو به پایین پیشفرض نمایش، رو به بالا مخفی */
+.icon-close {
+    display: none;
+}
+
+/* منوها به صورت ستونی */
+.menu {
+    flex-direction: column;
+    gap: var(--space-sm);
+    padding-left: var(--space-md);
+    /* تورفتگی زیر دکمه */
+}
+
+.menu a {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    text-decoration: none;
+    color: var(--Gray-950);
+}
+
+/* ===== حالت باز ===== */
+
+.nav-section.is-open .menu {
+    display: flex;
+}
+
+.nav-section.is-open .icon-open {
+    display: none;
+}
+
+.nav-section.is-open .icon-close {
+    display: block;
 }
 
 /* main */

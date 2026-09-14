@@ -20,19 +20,24 @@
     <section class="top-mobile">
       <img src="./images/logo.svg" alt="Logo, snap" class="logo">
       <h1 class="sr-only">snap</h1>
-      <button class="menu-button"><img class="menu-icon" src="./images/icon-menu.svg" alt="menu icon"></button>
+      <button class="menu-button" aria-expanded="false" aria-controls="primary-navigation">
+        <span class="sr-only">Open menu</span>
+        <img class="menu-icon" src="./images/icon-menu.svg" alt="">
+      </button>
     </section>
 
-    <nav class="navigation">
+    <div class="overlay"></div>
+
+    <nav class="navigation" id="primary-navigation">
       <section class="nav-section">
-        <button>
+        <button aria-expanded="false">
           <span class="link">Features</span>
-          <img src="./images/icon-arrow-down.svg" alt="arrow up" class="icon-open">
-          <img src="./images/icon-arrow-up.svg" alt="arrow down" class="icon-close">
+          <img src="./images/icon-arrow-down.svg" alt="arrow down" class="icon-open">
+          <img src="./images/icon-arrow-up.svg" alt="arrow up" class="icon-close">
         </button>
         <div class="menu">
           <a href="#"><img src="./images/icon-todo.svg" alt="todo list icon"><span class="link">Todo List</span></a>
-          <a href="#"><img src="./images/icon-calendar.svg" alt=calendar icon""><span class="link">Calendar</span></a>
+          <a href="#"><img src="./images/icon-calendar.svg" alt="calendar icon"><span class="link">Calendar</span></a>
           <a href="#"><img src="./images/icon-reminders.svg" alt="reminder bell icon"><span
               class="link">Reminders</span></a>
           <a href="#"><img src="./images/icon-planning.svg" alt="planning clock icon"><span
@@ -40,10 +45,10 @@
         </div>
       </section>
       <section class="nav-section">
-        <button>
+        <button aria-expanded="false">
           <span class="link">Company</span>
-          <img src="./images/icon-arrow-down.svg" alt="arrow up" class="icon-open">
-          <img src="./images/icon-up-down.svg" alt="arrow down" class="icon-close">
+          <img src="./images/icon-arrow-down.svg" alt="arrow down" class="icon-open">
+          <img src="./images/icon-arrow-up.svg" alt="arrow up" class="icon-close">
         </button>
         <div class="menu">
           <a href="#" class="link">History</a>
@@ -59,6 +64,7 @@
       </div>
     </nav>
   </header>
+
   <main class="main">
     <section class="hero-image">
       <img class="hero-mobile" src="./images/image-hero-mobile.png"
@@ -86,6 +92,8 @@
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
     Coded by <a href="#">Your Name Here</a>.
   </footer>
+
+  <script src="main.js" defer></script>
 </body>
 
 </html>
