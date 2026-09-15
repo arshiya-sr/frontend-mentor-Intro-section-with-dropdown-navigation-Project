@@ -10,6 +10,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    width: fit-content;
 }
 
 .logo {
@@ -50,7 +51,7 @@
     right: 0;
     height: 100dvh;
     width: min(70%, 320px);
-    padding: var(--space-xl) var(--space-lg);
+    padding: 6rem var(--space-lg);
 
     display: flex;
     flex-direction: column;
@@ -70,7 +71,7 @@
     visibility: visible;
 }
 
-/* ===== لایه تاریک ===== */
+/* dark overlay */
 
 .overlay {
     position: fixed;
@@ -89,14 +90,12 @@
     visibility: visible;
 }
 
-/* جلوگیری از اسکرول پشت منو */
+/* no scroll behind menu */
 body.no-scroll {
     overflow: hidden;
 }
 
-/* small menus */
-
-/* ===== دراپداون (موبایل) ===== */
+/* dropdown menu mobile */
 
 .nav-section {
     display: flex;
@@ -104,35 +103,40 @@ body.no-scroll {
     gap: var(--space-md);
 }
 
-/* دکمهی حاوی متن + فلش */
 .nav-section>button {
     display: flex;
     align-items: center;
     gap: var(--space-xs);
 }
 
-/* فلش رو به پایین پیشفرض نمایش، رو به بالا مخفی */
 .icon-close {
     display: none;
 }
 
-/* منوها به صورت ستونی */
 .menu {
     flex-direction: column;
     gap: var(--space-sm);
     padding-left: var(--space-md);
-    /* تورفتگی زیر دکمه */
 }
 
 .menu a {
     display: flex;
     align-items: center;
     gap: var(--space-sm);
-    text-decoration: none;
-    color: var(--Gray-950);
 }
 
-/* ===== حالت باز ===== */
+.link {
+    text-decoration: none;
+    color: var(--Black);
+    opacity: 0.6;
+    transition: all 0.2s ease;
+}
+
+.link:hover {
+    opacity: 1;
+}
+
+/* opened */
 
 .nav-section.is-open .menu {
     display: flex;
@@ -146,6 +150,23 @@ body.no-scroll {
     display: block;
 }
 
+/* login buttons */
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-md);
+}
+
+.button {
+    padding: var(--space-sm) 0;
+    width: 100%;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: var(--radius-lg);
+}
+
 /* main */
 
 .main {
@@ -153,6 +174,11 @@ body.no-scroll {
     flex-direction: column;
     gap: var(--space-lg);
     flex: 1;
+}
+
+.hero-image {
+    display: flex;
+    justify-content: center;
 }
 
 .hero-text {
@@ -211,5 +237,108 @@ body.no-scroll {
 }
 
 .footer a {
-    color: hsl(228, 45%, 44%);
+    color: var(--Gray-950);
+    text-decoration: none;
+    text-shadow: 2px 2px 2px var(--Gray-500);
+}
+
+/* Desktop Layout */
+/* 48rem = 768px based on defualt 16px font size root HTML*/
+@media screen and (min-width: 48rem) {
+
+    .header {
+        display: flex;
+        flex-direction: row;
+        gap: 5rem;
+    }
+
+    .top-mobile {
+        width: clamp(120px, 100%, 160px);
+    }
+
+    .logo {
+        width: clamp(120px, 100%, 160px);
+    }
+
+    .hero-mobile,
+    .menu-icon {
+        display: none;
+    }
+
+    .navigation {
+        position: relative;
+        height: 50px;
+        width: 100%;
+        visibility: visible;
+        flex-direction: row;
+        transform: none;
+        overflow: unset;
+        padding: 0;
+        align-items: center;
+    }
+
+    .buttons {
+        flex-direction: row;
+        width: clamp(120px, 100%, 180px);
+        margin-left: auto;
+    }
+
+    .button {
+        width: clamp(80px, 100%, 110px)
+    }
+
+    /* main */
+
+    .main {
+        flex-direction: row-reverse;
+        justify-content: center;
+        padding-right: 8rem;
+        padding-left: 11rem;
+        gap: 5rem;
+    }
+
+    .main section {
+        max-height: 700px;
+        width: fit-content;
+    }
+
+    .hero-image {
+        display: flex;
+        align-items: center;
+        max-width: 510px;
+    }
+
+    .hero-desktop {
+        display: block;
+        height: clamp(300px, 100%, 680px);
+    }
+
+    .hero-text {
+        text-align: left;
+        align-items: flex-start;
+        justify-content: flex-end;
+        width: fit-content
+    }
+
+    .hero-title {
+        font-size: var(--fs-huge);
+        max-width: 680px;
+        line-height: var(--space-3xl);
+        margin-bottom: var(--space-xxl);
+    }
+
+    .hero-description {
+        margin: 0;
+        scale: 1;
+        max-width: 500px;
+    }
+
+    .cta-btn {
+        margin-bottom: 8rem;
+        padding: var(--space-md) var(--space-lg);
+    }
+
+    .clients-icons {
+        max-width: 510px;
+    }
 }

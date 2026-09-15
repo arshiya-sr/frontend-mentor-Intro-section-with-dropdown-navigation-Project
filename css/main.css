@@ -31,6 +31,8 @@
     --fs-xl: 2.7rem;
     --fs-xxl: 3rem;
     --fs-3xl: 3.5rem;
+    --fs-gigantic: 5rem;
+    --fs-huge: 7rem;
 
     /* Font weight */
 
@@ -46,6 +48,8 @@
     --space-md: 1rem;
     --space-lg: 2rem;
     --space-xl: 3rem;
+    --space-xxl: 4rem;
+    --space-3xl: 5rem;
 
     /* Border radius */
 
