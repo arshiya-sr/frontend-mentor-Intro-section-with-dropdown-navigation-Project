@@ -12,6 +12,8 @@
     --Black: hsl(0, 0%, 0%);
     --White: hsl(0, 100%, 100%);
 
+    --shadow: hsla(0, 0%, 0%, 0.3);
+
     /* Typography */
 
     --font-family: 'Raleway', sans-serif;

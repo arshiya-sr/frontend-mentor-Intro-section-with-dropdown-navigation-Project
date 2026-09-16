@@ -10,7 +10,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: fit-content;
+    width: 100%;
 }
 
 .logo {
@@ -132,7 +132,13 @@ body.no-scroll {
     transition: all 0.2s ease;
 }
 
-.link:hover {
+.link:hover,
+.link:focus {
+    opacity: 1;
+}
+
+button.link:focus {
+    transform: scale(1.02);
     opacity: 1;
 }
 
@@ -208,6 +214,15 @@ body.no-scroll {
     letter-spacing: 1px;
     padding: var(--space-sm) var(--space-lg);
     border-radius: var(--radius-lg);
+    transition: all 0.2s ease-in;
+}
+
+.cta-btn:hover,
+.cta-btn:focus {
+    border: 1px solid var(--Black);
+    background-color: var(--White);
+    color: var(--Black);
+    transform: scale(1.005);
 }
 
 .clients-icons {
@@ -243,8 +258,8 @@ body.no-scroll {
 }
 
 /* Desktop Layout */
-/* 48rem = 768px based on defualt 16px font size root HTML*/
-@media screen and (min-width: 48rem) {
+/* 62rem = 992px based on defualt 16px font size root HTML*/
+@media screen and (min-width: 62rem) {
 
     .header {
         display: flex;
@@ -292,32 +307,32 @@ body.no-scroll {
     .main {
         flex-direction: row-reverse;
         justify-content: center;
-        padding-right: 8rem;
-        padding-left: 11rem;
-        gap: 5rem;
+        padding-inline: clamp(2rem, 10vw, 11rem);
+        gap: clamp(1.5rem, 4vw, 5rem);
     }
 
     .main section {
         max-height: 700px;
-        width: fit-content;
     }
 
     .hero-image {
         display: flex;
         align-items: center;
+        width: clamp(150px, 50%, 510px);
         max-width: 510px;
     }
 
     .hero-desktop {
         display: block;
-        height: clamp(300px, 100%, 680px);
+        height: clamp(200px, 100%, 680px);
     }
 
     .hero-text {
         text-align: left;
         align-items: flex-start;
         justify-content: flex-end;
-        width: fit-content
+        width: clamp(200px, 100%, 700px);
+        flex-shrink: 1;
     }
 
     .hero-title {
@@ -340,5 +355,45 @@ body.no-scroll {
 
     .clients-icons {
         max-width: 510px;
+    }
+
+    /* Desktop dropdown menus */
+
+    .nav-section {
+        position: relative;
+    }
+
+    .menu {
+        position: absolute;
+        top: 100%;
+        padding: var(--space-md);
+        background-color: var(--White);
+        box-shadow: 1px 0 15px var(--shadow);
+        border-radius: var(--radius-md);
+        transition: all 0.2s ease-in;
+    }
+
+    .menu:hover,
+    .menu:focus-within {
+        box-shadow: 2px 0 25px var(--shadow);
+        transform: scale(1.02);
+    }
+
+    .features {
+        padding: var(--space-md) var(--space-lg);
+        right: 0;
+    }
+
+    .company {
+        left: 0;
+        width: 120px;
+    }
+}
+
+/* Transition Accesibilty fix */
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: all 0.01ms linear !important;
     }
 }
