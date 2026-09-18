@@ -14,6 +14,8 @@
 
     --shadow: hsla(0, 0%, 0%, 0.3);
 
+    --overlay-color: hsl(0 0% 0% / 0.8);
+
     /* Typography */
 
     --font-family: 'Raleway', sans-serif;

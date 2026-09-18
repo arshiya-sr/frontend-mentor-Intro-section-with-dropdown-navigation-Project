@@ -77,7 +77,7 @@
     position: fixed;
     inset: 0;
     /* top/right/bottom/left = 0 */
-    background-color: hsl(0 0% 0% / 0.8);
+    background-color: var(--overlay-color);
     z-index: 10;
 
     opacity: 0;
